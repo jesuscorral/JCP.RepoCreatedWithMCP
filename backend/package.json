@@ -1,0 +1,33 @@
+{
+  "name": "todo-api-backend",
+  "version": "1.0.0",
+  "description": "Backend API for TODO List MVP application",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "node test-endpoints.js",
+    "test:endpoints": "node test-endpoints.js"
+  },
+  "keywords": [
+    "todo",
+    "api",
+    "express",
+    "nodejs",
+    "mvp"
+  ],
+  "author": "jesuscorral",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
