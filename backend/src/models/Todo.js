@@ -165,7 +165,10 @@ Todo.findCompleted = function(completed = true) {
 
 Todo.findByTag = function(tag) {
   return this.findAll({
-    where: sequelize.literal(`JSON_EXTRACT(tags, '$[*]') LIKE '%"${tag}"%'`),
+    where: sequelize.where(
+      sequelize.fn('JSON_CONTAINS', sequelize.col('tags'), JSON.stringify(tag)),
+      true
+    ),
     order: [['created_at', 'DESC']]
   });
 };
