@@ -7,25 +7,31 @@ require('dotenv').config();
 
 const config = {
   // Server configuration
-  port: process.env.PORT || 3000,
-  nodeEnv: process.env.NODE_ENV || 'development',
+  PORT: process.env.PORT || 3000,
+  NODE_ENV: process.env.NODE_ENV || 'development',
   
   // API configuration
-  apiBasePath: process.env.API_BASE_PATH || '/api',
+  API_BASE_PATH: process.env.API_BASE_PATH || '/api',
   
   // CORS configuration
-  corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:8080',
+  CORS_ORIGIN: process.env.CORS_ORIGIN || 'http://localhost:8080',
   
   // Application info
-  appName: process.env.APP_NAME || 'TODO List API',
-  appVersion: process.env.APP_VERSION || '1.0.0',
+  APP_NAME: process.env.APP_NAME || 'TODO List API',
+  APP_VERSION: process.env.APP_VERSION || '1.0.0',
   
-  // Database configuration (for future use)
-  dbPath: process.env.DB_PATH || './data/todos.db',
+  // Database configuration
+  DB_HOST: process.env.DB_HOST || 'localhost',
+  DB_PORT: process.env.DB_PORT || 5432,
+  DB_NAME: process.env.DB_NAME || 'todolist',
+  DB_USERNAME: process.env.DB_USERNAME || 'postgres',
+  DB_PASSWORD: process.env.DB_PASSWORD || '',
+  DB_PATH: process.env.DB_PATH || './database/development.sqlite',
   
   // Development helpers
   isDevelopment: process.env.NODE_ENV === 'development',
   isProduction: process.env.NODE_ENV === 'production',
+  isTest: process.env.NODE_ENV === 'test',
   
   // Request limits
   jsonLimit: '10mb',
